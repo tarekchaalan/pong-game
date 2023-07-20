@@ -1,34 +1,34 @@
 # Pong 🏓
 
-<h3>Run:</h3>
-<h4>-On Windows</h4>
+## Run:
+
+Copy and paste the code blocks into the terminal, make sure you are in the correct location you want the folder to be within.
+
+### Windows
 <code>git clone https://github.com/tarekchaalan/pong-game.git ; cd .\pong-game\ ; python -m venv env ; .\env\Scripts\activate ; pip install -r .\requirements.txt ; python main.py</code>
 
 <h4>-On Mac / Linux</h4>
 <code>git clone https://github.com/tarekchaalan/pong-game.git && cd pong-game && python3 -m venv env && source env/bin/activate && pip install -r requirements.txt && chmod u+x main.py && python3 main.py</code>
 
-<h3>Description:</h3>
+## Description:
 
-The Pong Game is a classic and addictive arcade game built with Python and Pygame. challenge a friend or play against an AI opponent. 
-<br>
+The Pong Game is a classic and addictive arcade game built with Python and Pygame. Challenge a friend or play against an AI opponent. 
 
-<h3>Players:</h3>
+## Players:
 
 Up to 2 Players
-<ul>
-  <li>Player 1: W, S</li>
-  <li>Player 2: UP, DOWN</li>
-</ul>
 
-<h3>Difficulty:</h3>
+- Player 1: W, S
+- Player 2: UP, DOWN
+
+## Difficulty:
 
 3 Levels of difficulty:
-<ul>
-  <li>Easy</li>
-  <li>Medium</li>
-  <li>Hard</li>
-</ul>
 
-<h3>Lives:</h3>
+- Easy
+- Medium
+- Hard
+
+## Lives:
 
 Each player gets 5 lives.
