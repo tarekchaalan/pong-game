@@ -105,19 +105,25 @@ def draw_lives(lives1, lives2):
     for i in range(lives2):
         pygame.draw.circle(win, WHITE, (WIDTH - 30 - i*30, LIVES_Y), LIFE_RADIUS)
 
-def update_lives(ball, ball_dx, lives1, lives2):
+def update_lives(ball, ball_dx, ball_dy, lives1, lives2, start_time):
     # Ball goes out of bounds
     if ball[0] - BALL_RADIUS < 0:
         lifelost.play()
         lives1 -= 1
         ball[0] = WIDTH // 2
-        ball_dx = BALL_SPEED
+        ball[1] = HEIGHT // 2
+        ball_dx = 0  # Make the ball stationary
+        ball_dy = 0  # Make the ball stationary
+        start_time = pygame.time.get_ticks()  # Start the timer
     elif ball[0] + BALL_RADIUS > WIDTH:
         lifelost.play()
         lives2 -= 1
         ball[0] = WIDTH // 2
-        ball_dx = -BALL_SPEED
-    return lives1, lives2, ball_dx
+        ball[1] = HEIGHT // 2
+        ball_dx = 0  # Make the ball stationary
+        ball_dy = 0  # Make the ball stationary
+        start_time = pygame.time.get_ticks()  # Start the timer
+    return lives1, lives2, ball_dx, ball_dy, start_time
 
 def display_winner(winner):
     win.fill((0, 0, 0))  # Fill with black
@@ -142,6 +148,7 @@ def main():
 
     # Initialize a variable to hold the start time of the delay
     delay_start = 0
+    start_time = 0
     is_delaying = False
 
     while True:
@@ -151,7 +158,7 @@ def main():
                 sys.exit()
 
         # Ball movement
-        if not is_delaying:
+        if not start_time or pygame.time.get_ticks() - start_time > 1000:
             ball[0] += ball_dx
             ball[1] += ball_dy
 
@@ -193,11 +200,16 @@ def main():
 
         # Ensure paddles aren't out of screen
         if paddle1.top < 0: paddle1.top = 0
-        if paddle1.bottom > HEIGHT: paddle1.bottom = HEIGHT
+        if paddle1.bottom > HEIGHT - 40: paddle1.bottom = HEIGHT - 40
         if paddle2.top < 0: paddle2.top = 0
-        if paddle2.bottom > HEIGHT: paddle2.bottom = HEIGHT
+        if paddle2.bottom > HEIGHT - 40: paddle2.bottom = HEIGHT - 40
 
-        lives1, lives2, ball_dx = update_lives(ball, ball_dx, lives1, lives2)
+        if start_time != 0 and pygame.time.get_ticks() - start_time > 1000:
+            ball_dx = BALL_SPEED if ball[0] < WIDTH // 2 else -BALL_SPEED  # Start the ball moving again
+            ball_dy = BALL_SPEED * random.choice([-1, 1])  # Set the y-direction of the ball
+            start_time = 0  # Reset the start time
+
+        lives1, lives2, ball_dx, ball_dy, start_time = update_lives(ball, ball_dx, ball_dy, lives1, lives2, start_time)
 
         if lives1 == 0:
             display_winner(2)
