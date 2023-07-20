@@ -18,8 +18,8 @@ The Pong Game is a classic and addictive arcade game built with Python and Pygam
 
 Up to 2 Players
 
-- Player 1: W, S
-- Player 2: UP, DOWN (arrows)
+- Player 1 (LHS): W, S
+- Player 2 (RHS): UP, DOWN (arrows)
 
 ## Difficulty:
 
