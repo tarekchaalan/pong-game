@@ -2,12 +2,10 @@
 
 <h3>Run:</h3>
 <h4>-On Windows</h4>
-<code>git clone https://github.com/tarekchaalan/pong-game.git && python -m venv env && .\/env/Scripts/activate && pip install -r .\requirements.txt </code>
+<code>git clone https://github.com/tarekchaalan/pong-game.git ; python -m venv env ; .\env\Scripts\activate ; pip install -r .\requirements.txt</code>
 <h5>Run the program:</h5>
 <code>python main.py</code>
 <h4>-On Mac / Linux</h4>
-
-
 
 <h3>Description:</h3>
 
