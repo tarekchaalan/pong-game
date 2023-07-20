@@ -5,7 +5,7 @@
 <code>git clone https://github.com/tarekchaalan/pong-game.git ; cd .\pong-game\ ; python -m venv env ; .\env\Scripts\activate ; pip install -r .\requirements.txt ; python main.py</code>
 
 <h4>-On Mac / Linux</h4>
-<code></code>
+<code>git clone https://github.com/tarekchaalan/pong-game.git && cd pong-game && python3 -m venv env && source env/bin/activate && pip install -r requirements.txt && chmod u+x main.py && python3 main.py</code>
 
 <h3>Description:</h3>
 
