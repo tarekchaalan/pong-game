@@ -20,16 +20,16 @@ win = pygame.display.set_mode((WIDTH, HEIGHT))
 font = pygame.font.Font(None, 36)
 
 #Load audio files
-clicksound = pygame.mixer.Sound('data\sounds\click_sound.mp3')
-paddlehit = pygame.mixer.Sound('data\sounds\paddle_collision.mp3')
-wallhit = pygame.mixer.Sound('data\sounds\wall_collision.mp3')
-lifelost = pygame.mixer.Sound('data\sounds\life_lost.mp3')
+clicksound = pygame.mixer.Sound('data/sounds/click_sound.mp3')
+paddlehit = pygame.mixer.Sound('data/sounds/paddle_collision.mp3')
+wallhit = pygame.mixer.Sound('data/sounds/wall_collision.mp3')
+lifelost = pygame.mixer.Sound('data/sounds/life_lost.mp3')
 
 # Load the player icon images and scale them down
-one_player_img = pygame.image.load('data\images\player1.png')
+one_player_img = pygame.image.load('data/images/player1.png')
 one_player_img = pygame.transform.scale(one_player_img, (200, 200))  # change 50, 50 to the size you want
 
-two_players_img = pygame.image.load('data\images\players2.png')
+two_players_img = pygame.image.load('data/images/players2.png')
 two_players_img = pygame.transform.scale(two_players_img, (200, 200))  # change 50, 50 to the size you want
 
 LIFE_RADIUS = 10  # adjust this to change the size of the "lives" circles
